@@ -33,7 +33,7 @@ public class Commands implements CommandExecutor
 			else if (args[0].equalsIgnoreCase("reload") && sender.hasPermission("mcmmocl.reload"))
 			{
 				plugin.reloadConfiguration();
-				sender.sendMessage(ChatColor.GREEN + "mcMMOCapLimit Configuration reloaded.");
+				sender.sendMessage(ChatColor.GREEN + "[mcMMOCapLimit] Configuration reloaded.");
 
 				return true;
 			}

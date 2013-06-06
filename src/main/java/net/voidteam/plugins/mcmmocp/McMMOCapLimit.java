@@ -14,7 +14,8 @@ public class McMMOCapLimit extends JavaPlugin implements Listener
 	@Override
 	public void onEnable()
 	{
-		getLogger().info("Initializing mcMMOCapLimit...");
+		getLogger().info("Initializing...");
+		
 		// Create default config if it doesn't exist yet.
 		if (!new File(getDataFolder(), "config.yml").exists())
 		{
@@ -24,22 +25,24 @@ public class McMMOCapLimit extends JavaPlugin implements Listener
 		// Load configuration.
 		reloadConfiguration();
 		
+		// Register events.
+		getServer().getPluginManager().registerEvents(this, this);
+		getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
+		
 		// Register command executor.
 		Commands cmdExecutor = new Commands(this);
 		getCommand("mcmmocl").setExecutor(cmdExecutor);
 		
-		getServer().getPluginManager().registerEvents(this, this);
-		getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
-		getLogger().info("mcMMOCapLimit Loaded!");
+		getLogger().info("Loaded!");
 	}
 	
 	// On Plugin Disable.
 	@Override
 	public void onDisable()
 	{
-		getLogger().info("Disabling mcMMOCapLimit...");
+		getLogger().info("Disabling...");
 		// TODO: Place any custom disable code here.
-		getLogger().info("mcMMOCapLimit Disabled.");
+		getLogger().info("Disabled.");
 	}
 	
 	// Reload the config.yml and associate variables/objects.

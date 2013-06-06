@@ -5,3 +5,13 @@ main: net.voidteam.plugins.mcmmocp.McMMOCapLimit
 name: mcMMO Cap Limit
 startup: postworld
 version: '0.1'
+
+commands:
+   mcmmocl:
+      description: Information about the plugin.
+      usage: /<command> info
+
+permissions:
+    mcmmocl.reload:
+        description: Allows you to reload the config.
+        default: op
