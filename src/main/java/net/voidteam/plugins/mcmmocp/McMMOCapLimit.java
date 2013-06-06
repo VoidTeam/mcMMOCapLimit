@@ -1,5 +1,6 @@
 package net.voidteam.plugins.mcmmocp;
 
+import java.io.File;
 import java.util.Arrays;
 
 import org.bukkit.entity.Player;
@@ -19,6 +20,14 @@ public class McMMOCapLimit extends JavaPlugin implements Listener
 	@Override
 	public void onEnable()
 	{
+		// Create default config if not exist yet.
+		if (!new File(getDataFolder(), "config.yml").exists())
+		{
+			saveDefaultConfig();
+		}
+		
+		// Load configuration.
+		
 		getServer().getPluginManager().registerEvents(this, this);
 	}
 	
