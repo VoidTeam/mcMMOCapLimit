@@ -4,6 +4,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.PluginDescriptionFile;
 
 // Command Executor Class.
 public class Commands implements CommandExecutor
@@ -25,7 +26,8 @@ public class Commands implements CommandExecutor
 			// /mcmmocl, /mcmmocl version, /mcmmocl info
 			if (args.length == 0 || args[0].equalsIgnoreCase("version") || args[0].equalsIgnoreCase("info"))
 			{
-				// TODO: Display Version.
+				PluginDescriptionFile pdfFile = plugin.getDescription();
+				sender.sendMessage( ChatColor.GREEN + pdfFile.getName() + " " + pdfFile.getVersion() + "" );
 
 				return true;
 			}

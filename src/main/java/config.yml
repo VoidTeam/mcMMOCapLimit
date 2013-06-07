@@ -8,6 +8,7 @@
 # the plugin create you a new one!
 #
 
+rank-ladder: 'tier'
 groups:
     {group}:
         limits:
