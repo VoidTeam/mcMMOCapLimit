@@ -2,7 +2,7 @@ author: Colby Terry - VoidTeam Network
 database: false
 description: "Put level caps on skills based on player group.\r\n"
 main: net.voidteam.plugins.mcmmocp.McMMOCapLimit
-name: mcMMO Cap Limit
+name: mcMMOCapLimit
 startup: postworld
 version: '0.1'
 
